@@ -15,7 +15,7 @@ public class CarDaoImp implements CarDao {
 
     public CarDaoImp() {
         carList = new ArrayList<>();
-        carList.add(new Car(1, "Vaz", "Priora"));
+        carList.add(new Car(1, "ВАЗ", "Priora"));
         carList.add(new Car(2, "VAZ", "Granta"));
         carList.add(new Car(3, "VAZ", "Niva"));
         carList.add(new Car(4, "VAZ", "Shevrole"));
@@ -24,12 +24,12 @@ public class CarDaoImp implements CarDao {
     }
 
     @Override
-    public List<Car> getListCar(String count) {
+    public List<Car> getListCar(Integer count) {
         List<Car> list = this.carList;
         if (count != null) {
-            int co = Integer.parseInt(count);
-            if (co > 1 && co < 5) {
-                list = carList.stream().limit(co).collect(Collectors.toList());
+          //  int co = Integer.parseInt(count);
+            if (count > 1 && count < 5) {
+                list = carList.stream().limit(count).collect(Collectors.toList());
             }
 
         }return list;
